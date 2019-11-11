@@ -1,0 +1,48 @@
+
+$main_padding: 20px;
+$main_font: 15px;
+$sub_font: 11px;
+$color: #fff;
+$fontw: bold;
+
+
+
+.side{
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  &__box{
+    background-color: #253141;
+    height: 100px;
+    color:$color;
+    display: flex;
+    line-height: 100px;
+    &__name{
+      font-size: 16px;
+      font-weight: $fontw;
+      padding-left: 10px;
+      padding-right: 30px ;
+    }
+    .icon{
+      color:$color;
+      margin-left: auto;
+      padding: 5px;
+    }
+  }
+  .group{
+    color: $color;
+    font-weight: $fontw;
+    &__area{
+      padding-top: $main-padding;
+      padding-bottom: $main_padding;
+      &__title{
+        font-size: $main_font;
+      }
+      &__comment{
+        font-size: $sub_font;
+      }
+    }
+  }
+}

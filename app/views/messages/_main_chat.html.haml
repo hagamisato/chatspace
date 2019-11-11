@@ -1,0 +1,18 @@
+.chat__side
+  .chat__header
+    .chat__header__group group name
+    %button.chat__header__edit--btn edit
+    .member member:
+  .message
+    .message__upper
+      .message__upper__name shouya
+      .message__upper__date 2019/11/10 10:10
+    .message__box This is a first message
+  .send
+    .send__area
+      %input.send__area--text{type:"text", placeholder: "  type a message"}
+      .send__area--box
+        %label.send--icon{class: "input-box__image"}
+          = icon('fas fa-2x', 'image')
+      %input.send__area--picfile{type: "file"}
+    %button.send--btn send
