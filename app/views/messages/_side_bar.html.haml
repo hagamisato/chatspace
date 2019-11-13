@@ -8,13 +8,16 @@
     = link_to  edit_user_path(current_user) do
       %i.fas.fa-cog.icon 
   .group
-    .group__area
-      %p.group__area__title test
-      %p.group__area__comment まだメッセージはありません
-    .group__area
-      %p.group__area__title test2
-      %p.group__area__comment まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group__area
+        = link_to group_messages_path(group) do
+          %p.group__area__title 
+            = group.name
+          %p.group__area__comment まだメッセージはありません
+      .group__area
+        %p.group__area__title test2
+        %p.group__area__comment まだメッセージはありません
 
 
-  -# = link_to "#" do
+    -# = link_to "#" do
     -#   %i.fas.fa-cog.icon  書き換えた

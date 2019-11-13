@@ -40,9 +40,11 @@ $fontw: bold;
       padding-bottom: $main_padding;
       &__title{
         font-size: $main_font;
+        color: $color;
       }
       &__comment{
         font-size: $sub_font;
+        color: $color;
       }
     }
   }
