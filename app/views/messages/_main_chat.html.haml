@@ -1,19 +1,41 @@
 .chat__side
-  .chat__header
-    .chat__header__group group name
-    %button.chat__header__edit--btn edit 
-    -# edit_group_path
-    .member member:
-  .message
-    .message__upper
-      .message__upper__name shouya
-      .message__upper__date 2019/11/10 10:10
-    .message__box This is a first message
-  .send
-    .send__area
-      %input.send__area--text{type:"text", placeholder: "  type a message"}
-      .send__area--box
-        %label.send--icon{class: "input-box__image"}
-          = icon('fas fa-2x', 'image')
-      %input.send__area--picfile{type: "file"}
-    %button.send--btn send
+  = form_for [@group, @message] do |f|
+    .chat__header
+      .chat__header__group
+        =@group.name
+      .chat__header__edit--btn
+        = link_to edit_group_path(@group) do
+          edit
+      -# = f.button "edit", class: "chat__header__edit--btn"
+      .member
+        - @group.users.each do |user|
+          =user.name
+    .message 
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
+
+
+
+
+
+
+
+
+
+      -# .send
+    -#   = f.text_field :content, class: "send--text", placeholder: 'type a message'
+    -#   -# %input.send__area--text{type:"text", placeholder: "  type a message"}
+    -#   .send--box
+    -#     =f.label :image, class: "input-box__image" do
+    -#       = icon('fas fa-2x', 'image')
+    -#   = f.file_field :image, class: "send--picfile" 
+    -# = f.submit 'Send', class:'send--btn'
