@@ -1,29 +1,27 @@
 .chat__side
   = form_for [@group, @message] do |f|
     .chat__header
-      .chat__header__group group name
-      = f.button "edit", class: "chat__header__edit--btn"
-      -# edit_group_path
-      .member member:
+      .chat__header__group
+        =@group.name
+      .chat__header__edit--btn
+        = link_to edit_group_path(@group) do
+          edit
+      -# = f.button "edit", class: "chat__header__edit--btn"
+      .member
+        - @group.users.each do |user|
+          =user.name
     .message 
-      .message__upper
-        .message__upper__name
-          -# = message.user.name
-        .message__upper__date date
-        -# = message.created_at.strftime("%Y/%m/%d %H:%M")
-      .message__lower
-        -# - if message.content.present?
-          %p.message__lower__message This is a first message
-        -#   = message.content 
-        -# = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-  .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
 
 
 
