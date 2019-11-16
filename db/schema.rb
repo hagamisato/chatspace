@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20191113054331) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
     t.string   "image"
-    t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "group_id",   null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
