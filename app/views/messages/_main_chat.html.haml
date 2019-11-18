@@ -1,25 +1,25 @@
 .chat__side
-  = form_for [@group, @message] do |f|
-    .chat__header
-      .chat__header__group
-        =@group.name
-      .chat__header__edit--btn
-        = link_to edit_group_path(@group) do
-          edit
-      -# = f.button "edit", class: "chat__header__edit--btn"
-      .member
-        - @group.users.each do |user|
-          =user.name
-    .message 
-      = render @messages
-    .form
+  .chat__header
+    .chat__header__group
+      =@group.name
+    .chat__header__edit--btn
+      = link_to edit_group_path(@group) do
+        edit
+    -# = f.button "edit", class: "chat__header__edit--btn"
+    .member
+      - @group.users.each do |user|
+        =user.name
+  .message 
+    = render @messages
+  .form
+    .form__box
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
+        = f.text_field :content, class: 'form__box__message', placeholder: 'type a message'
+        .form__box__submit
+          = f.label :image, class: 'form__box__submit__image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__box__submit-btn'
 
 
 
