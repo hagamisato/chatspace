@@ -1,10 +1,15 @@
-.message__upper
-  .message__upper__name
+.message__upper{"data-message_id": "#{message.id}"}
+  .message__upper__name 
     = message.user.name
   .message__upper__date 
-  = message.created_at.strftime("%Y/%m/%d %H:%M")
-.message__lower
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+.message__lower 
   - if message.content.present?
     %p.message__lower__message 
-    = message.content 
+    = message.content  
   = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  
+  
+-#   find(params[:id])
+-#   data-message_id=messages.id
+-#  {data: {'data-message_id' => 'message.id'}}

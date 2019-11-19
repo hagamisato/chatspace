@@ -1,5 +1,4 @@
 $(function() {
-  console.log("ok")
   function appendUser(user) {
     let html = `
       <div class="chat-group-user clearfix">
