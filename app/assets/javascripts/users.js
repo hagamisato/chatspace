@@ -1,4 +1,5 @@
 $(function() {
+  console.log("ok")
   function appendUser(user) {
     let html = `
       <div class="chat-group-user clearfix">
@@ -39,7 +40,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      // console.log(users);
       $(" #user-search-result").empty();
       if (users.length !== 0){
         users.forEach(function(user){
@@ -72,13 +72,3 @@ $(function() {
       .remove();
   });
 });
-
-
-
-
-// $(function() {
-//   $(".chat-group-form__input").on("keyup", function() {
-//     let input = $(".chat-group-form__input").val();
-//     console.log(input);
-//   });
-// });
