@@ -97,6 +97,7 @@ $(function(){
 
 
   var reloadMessages = function() {
+    if(document.location.href.match(/\/groups\/\d+\/messages/)){
     last_message_id = $('.message__upper').last().data('message_id');
     $.ajax({
       url: "api/messages",
@@ -117,7 +118,8 @@ $(function(){
     .fail(function() {
       console.log('error');
     });
+  }
   };
-   
   setInterval(reloadMessages, 7000);
-})
+});
+
