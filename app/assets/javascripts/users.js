@@ -1,5 +1,4 @@
 $(function() {
-  console.log("ok")
   function appendUser(user) {
     let html = `
       <div class="chat-group-user clearfix">
@@ -40,6 +39,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
+      
       $(" #user-search-result").empty();
       if (users.length !== 0){
         users.forEach(function(user){
