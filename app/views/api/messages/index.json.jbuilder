@@ -7,7 +7,3 @@ json.array! @messages do |message|
   json.id message.id
 end
 
-
-# もともと
-# json.content message.content
-# json.image message.image
