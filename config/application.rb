@@ -14,9 +14,9 @@ module Chatspace
       g.helper false
       g.test_framework false
       config.i18n.default_locale = :ja
-      
+      config.time_zone = 'Tokyo'
     end
-    config.time_zone = 'Tokyo'
   end
+  
 end
 
