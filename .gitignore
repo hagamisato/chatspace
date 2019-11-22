@@ -22,3 +22,5 @@ CarrierWave
 
 
 public/＊
+
+config/secrets.yml
