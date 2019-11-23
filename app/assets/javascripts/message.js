@@ -15,7 +15,9 @@ $(function(){
                  <p class="message__lower__message">
                   ${message.content}
                  </p>
+                 <p>
                   ${image}
+                 </p>
                </div>`
     return html;
   }
@@ -38,7 +40,7 @@ $(function(){
       $('.form__box__submit-btn').prop('disabled', false);
       $('.new_message')[0].reset();
       $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
-      })
+    })
     .fail(function(){
       alert("メッセージ送信に失敗しました")
     });

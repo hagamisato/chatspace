@@ -18,14 +18,16 @@ $light_blue: #38aef0;
       padding-top: 35px;
       padding-left: 20px;
     }
-    &__edit--btn{
+    &__edit--btn a{
       margin-right: 40px;
       position: absolute;
       top: 28px;
       right: 40px;
-      border: solid 3px lightblue;
+      border: solid 3px $light_blue;
       padding: 10px 20px;
-      color:lightblue;
+      background-color:$light_blue;
+      color: #fafafa;
+      text-decoration: none;
     }
     .member{
       font-size: 12px;
@@ -85,6 +87,7 @@ $light_blue: #38aef0;
         float: right;
         font-size: 16px;
         height: 50px;
+        width: 70px;
         margin-left: 15px;
         }
     }
