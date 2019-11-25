@@ -33,20 +33,30 @@ $fontw: bold;
     }
   }
   .group{
+    text-decoration: none;
     color: $color;
     font-weight: $fontw;
     &__area{
+      text-decoration: none;
       padding-top: $main-padding;
       padding-bottom: $main_padding;
       &__title {
+        text-decoration: none;
         font-size: $main_font;
         color: $color;
       }
       &__comment {
+        text-decoration: none;
         font-size: $sub_font;
         color: $color;
       }
+      &__comment a{
+        text-decoration: none;
+      }
     }
+  }
+  a{
+    text-decoration: none;
   }
 }
 
